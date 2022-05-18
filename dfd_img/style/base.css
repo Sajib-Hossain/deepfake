@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+.container{
+  height: 450px;
+  width: 430px;
+  position: relative;
+  margin-top: 100px;
+  margin-left: 300px;
+}
+.container .wrapper{
+  position: relative;
+  height: 400px;
+  width: 400px;
+  border-radius: 50%;
+  background: #fff;
+  border: 2px dashed #c2cdda;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.wrapper.active{
+  border: none;
+}
+.wrapper .image{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.wrapper img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.wrapper .icon{
+  font-size: 100px;
+  color: #9658fe;
+}
+.wrapper .text{
+  font-size: 20px;
+  font-weight: 500;
+  color: #5B5B7B;
+}
+.wrapper #cancel-btn i{
+  position: absolute;
+  font-size: 20px;
+  right: 15px;
+  top: 15px;
+  color: #9658fe;
+  cursor: pointer;
+  display: none;
+}
+.wrapper.active:hover #cancel-btn i{
+  display: block;
+}
+.wrapper #cancel-btn i:hover{
+  color: #e74c3c;
+}
+.wrapper .file-name{
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  padding: 8px 0;
+  font-size: 18px;
+  color: #fff;
+  display: none;
+  background: linear-gradient(135deg,#3a8ffe 0%,#9658fe 100%);
+}
+.wrapper.active:hover .file-name{
+  display: block;
+}
+.container #custom-btn{
+  margin-top: 30px;
+  display: block;
+  width: 90%;
+  height: 40px;
+  border: none;
+  outline: none;
+  border-radius: 25px;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  background: linear-gradient(135deg,#30b493 0%,#3886b9 100%);
+}
+
+#hh{
+    font-size:70px;
+    margin-left: 525px; 
+    margin-bottom: 10px;
+    color:rgba(216, 177, 177, 0.842)
+}
+#hh2{
+    font-size:20px; 
+    margin-left: 1025px; 
+    margin-top: 5px; 
+    color:rgba(216, 177, 177, 0.842)
+}
+
+#hh3{
+    font-size:60px;
+    font-weight:bold;
+    margin-left: 150px; 
+    color:rgba(216, 177, 177, 0.842);
+    margin-top: 5px;
+}
+#hh4{
+    font-size:90px;
+    font-weight:bold;
+    margin-left: 350px; 
+    color:rgba(216, 177, 177, 0.842)
+}
+
+.glow {
+    font-size: 100px;
+    color: #376f86;
+    text-align: center;
+    margin-left: 300px;
+    margin-top: 50px;
+    animation: glow 1s ease-in-out infinite alternate;
+  }
+  
+ @-webkit-keyframes glow {
+    from {
+      text-shadow: 0 0 10px #27273c, 0 0 20px #27273c, 0 0 30px #27273c, 0 0 40px #27273c, 0 0 50px #27273c, 0 0 60px #27273c, 0 0 70px #27273c, 0 0 80px #27273c;
+    }
+    
+    to {
+      text-shadow: 0 0 20px #27273c, 0 0 30px #000000, 0 0 40px #000000, 0 0 50px #000000, 0 0 60px #000000, 0 0 70px #000000, 0 0 80px #000000, 0 0 90px #000000;
+    }
+  }
+
+  #btn3{
+    margin-top: 30px;
+    display: block;
+    width: 11.5%;
+    height: 40px;
+    border: none;
+    outline: none;
+    border-radius: 25px;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    background: linear-gradient(135deg,#30b493 0%,#3886b9 100%);
+  }
+
+
+  @keyframes move_wave {
+    0% {
+        transform: translateX(0) translateZ(0) scaleY(1)
+    }
+    50% {
+        transform: translateX(-25%) translateZ(0) scaleY(0.55)
+    }
+    100% {
+        transform: translateX(-50%) translateZ(0) scaleY(1)
+    }
+}
+.waveWrapper {
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    margin: auto;
+}
+.waveWrapperInner {
+    position: absolute;
+    width: 100%;
+    overflow: hidden;
+    height: 100%;
+    bottom: -1px;
+    background-image: linear-gradient(to top, #376f86 20%, #27273c 80%);
+}
+.bgTop {
+    z-index: 15;
+    opacity: 0.5;
+}
+.bgMiddle {
+    z-index: 10;
+    opacity: 0.75;
+}
+.bgBottom {
+    z-index: 5;
+}
+.wave {
+    position: absolute;
+    left: 0;
+    width: 200%;
+    height: 100%;
+    background-repeat: repeat no-repeat;
+    background-position: 0 bottom;
+    transform-origin: center bottom;
+}
+.waveTop {
+    background-size: 50% 100px;
+}
+.waveAnimation .waveTop {
+  animation: move-wave 3s;
+   -webkit-animation: move-wave 3s;
+   -webkit-animation-delay: 1s;
+   animation-delay: 1s;
+}
+.waveMiddle {
+    background-size: 50% 120px;
+}
+.waveAnimation .waveMiddle {
+    animation: move_wave 10s linear infinite;
+}
+.waveBottom {
+    background-size: 50% 100px;
+}
+.waveAnimation .waveBottom {
+    animation: move_wave 15s linear infinite;
+}

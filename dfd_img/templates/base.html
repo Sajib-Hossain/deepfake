@@ -1,0 +1,107 @@
+{% load static %}
+<!DOCTYPE html>
+<!-- Created By CodingNepal -->
+<html lang="en" dir="ltr">
+   <head>
+      <meta charset="utf-8">
+      <title>DFFD</title>
+      <link rel="stylesheet" href="{% static 'base.css' %}">
+      <link rel="stylesheet" href="{% static 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css' %}"/>
+   </head>
+   <body>
+      <form class="" action="" method="POST" enctype="multipart/form-data">
+         {% csrf_token %}
+      <div class="waveWrapper waveAnimation">
+         <div class="waveWrapperInner bgTop">
+           <div class="wave waveTop" style="background-image: url('http://front-end-noobs.com/jecko/img/wave-top.png')">
+
+      <div >
+         <h1 id="hh">Real And Fake Face Detection</h1>
+         <h1 id="hh2">Make your machine to knock your BRAIN</h1>
+     </div>
+
+     <table><tr><td>
+
+      <div class="container">
+         <div class="wrapper">
+            <div class="image">
+               <img src="{% static 'xx.jpg'%}" alt="">
+            </div>
+            <div class="content">
+               <div class="icon">
+                  <i class="fas fa-cloud-upload-alt"></i>
+               </div>
+               <div class="text">
+                  No file chosen, yet!
+               </div>
+            </div>
+            <div id="cancel-btn">
+               <i class="fas fa-times"></i>
+            </div>
+         </div>
+         <button id="custom-btn" onclick="defaultBtnActive()" for="default-btn"> Choose Image </button>
+          <input required id="default-btn" type="file" name="img" hidden>
+      </div>
+
+   </td>
+   <td id="td2">
+      <div>
+         <h1 id="hh3">{{ dlog }}</h1>
+         <h1 class="glow">{{ pred }}</h1>
+       </div>
+     </td>
+     </tr></table>
+
+     <div>
+      <button  type="submit" id="btn3" name="btn3" style="margin-left: 1035px; margin-top:30px; background-color: rgb(211, 90, 147);">Upload Image</button>
+    </div>
+    
+    
+    <h2 style="margin-top: 135px; margin-left: 50px; margin-bottom:0px; color: #102f3b;">Developed By: Md Kamrus Samad</h2>
+    <h3 style="margin-top: 0px; margin-left: 50px; color: #376f86;">Email: kamrus.samad@northsouth.edu</h3>
+
+   </div>
+</div>
+<div class="waveWrapperInner bgMiddle">
+  <div class="wave waveMiddle" style="background-image: url('http://front-end-noobs.com/jecko/img/wave-mid.png')"></div>
+</div>
+<div class="waveWrapperInner bgBottom">
+  <div class="wave waveBottom" style="background-image: url('http://front-end-noobs.com/jecko/img/wave-bot.png')"></div>
+</div>
+</div>
+</form>
+
+      <script>
+         const wrapper = document.querySelector(".wrapper");
+         const fileName = document.querySelector(".file-name");
+         const defaultBtn = document.querySelector("#default-btn");
+         const customBtn = document.querySelector("#custom-btn");
+         const cancelBtn = document.querySelector("#cancel-btn i");
+         const img = document.querySelector("img");
+         let regExp = /[0-9a-zA-Z\^\&\'\@\{\}\[\]\,\$\=\!\-\#\(\)\.\%\+\~\_ ]+$/;
+         function defaultBtnActive(){
+           defaultBtn.click();
+         }
+         defaultBtn.addEventListener("change", function(){
+           const file = this.files[0];
+           if(file){
+             const reader = new FileReader();
+             reader.onload = function(){
+               const result = reader.result;
+               img.src = result;
+               wrapper.classList.add("active");
+             }
+             cancelBtn.addEventListener("click", function(){
+               img.src = "";
+               wrapper.classList.remove("active");
+             })
+             reader.readAsDataURL(file);
+           }
+           if(this.value){
+             let valueStore = this.value.match(regExp);
+             fileName.textContent = valueStore;
+           }
+         });
+      </script>
+   </body>
+</html>
